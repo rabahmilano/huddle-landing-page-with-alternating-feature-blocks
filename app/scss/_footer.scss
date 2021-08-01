@@ -1,0 +1,116 @@
+.footer {
+  background: $darkCyan;
+  padding: 8rem 0 2rem;
+  color: $paleCyan;
+  font-size: 1.1rem;
+
+  a {
+    color: $paleCyan;
+    width: fit-content;
+    font-weight: map-get($font-weights, regular) ;
+  }
+  .icon {
+    margin-right: 1.3rem;
+  }
+
+  &__container {
+    > div:not(:last-child) {
+      margin: 1.5rem 0;
+    }
+  }
+
+  &__head {
+    max-width: 600px;
+  }
+
+  &__logo {
+    margin-bottom: 2rem;
+  }
+
+  &__information {
+    > * {
+      margin: .8rem 0;
+      font-size: .9rem;
+      line-height: 1.8;
+    }
+  }
+
+  &__links {
+    a {
+      margin: .8rem 0;
+      padding-bottom: 2px;
+      border-bottom: solid 1px transparent;
+      transition: border-bottom-color .3s ease-in-out;
+
+      &:hover {
+        border-bottom-color: $paleCyan;
+      }
+    }
+  }
+
+  &__social-links {
+    a {
+      font-size: 1.8rem;
+      margin: 0 .4rem;
+      transition: color .3s ease-in-out;
+
+      &:nth-of-type(1):hover {
+        color: #4267b2;
+      }
+
+      &:nth-of-type(2):hover {
+        color: #fb3958;
+      }
+
+      &:nth-of-type(3):hover {
+        color: #00aced;
+      }
+    }
+  }
+
+  &__copyright {
+    font-size: .7rem;
+    text-align: center;
+  }
+
+  .attribution {
+    position: absolute;
+    font-size: 11px;
+    width: 100%;
+    background-color: $darkCyan;
+    text-align: center;
+    padding: 2rem 0 1rem;
+
+    a {
+      color: $pink;
+    }
+  }
+
+  @include breakpoint-up(medium) {
+    &__links {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @include breakpoint-up(xlarge) {
+    &__container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr) auto;
+      column-gap: 2rem;
+    }
+
+    &__logo {
+      grid-column: 1 / span 3;
+    }
+
+    &__social-links {
+      align-items: flex-start;
+    }
+
+    &__copyright {
+      grid-column: 1 / span 3;
+      text-align: right;
+    }
+  }
+}

@@ -1,0 +1,60 @@
+.header {
+  background: linear-gradient(rgba($paleCyan, .4)), url(../../images/bg-hero-mobile.svg) top center no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+
+  .navbar {
+    padding: $font-med 0;
+
+    &__logo {
+      width: 40%;
+      max-width: 200px;
+    }
+
+    &__btn {
+      background: white;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, .2);
+    }
+  }
+
+  .hero {
+    text-align: center;
+    padding: 5rem 0 2rem;
+
+    &__title {
+      font-size: 1.7rem;
+      margin-bottom: 2rem;
+    }
+
+    p {
+      margin-bottom: 2rem;
+    }
+
+    &__btn {
+      margin-bottom: 2rem;
+      width: 80%;
+      max-width: 300px;
+      background: $pink;
+      color: $paleCyan;
+      padding: 1rem 0;
+      letter-spacing: 1px;
+      font-weight: map-get($font-weights, normal);
+    }
+  }
+
+  @include breakpoint-up(large) {
+    .navbar {
+      padding: 2rem 0;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 1.5rem;
+      justify-content: center;
+      align-items: center;
+      height: 100vh - 20vh;
+      text-align: left;
+    }
+  }
+}
